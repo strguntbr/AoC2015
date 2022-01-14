@@ -1,0 +1,17 @@
+name: AoC 2021 Tests
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Execute Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Haskell
+        uses: haskell/actions/setup@v1
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Run tests for all days
+        run: ./testAll.sh
